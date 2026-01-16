@@ -1,12 +1,15 @@
+import Section from "../components/Section";
+import ProjectCard from "../components/ProjectCard";
+import { PROJECTS } from "../data/projects";
+
 export default function Projects() {
   return (
-    <section id="projects" className="px-4 py-20 min-h-[85vh]">
-      <div className="mx-auto max-w-5xl">
-        <h2 className="text-3xl font-semibold tracking-tight">Projects</h2>
-        <div className="mt-6 rounded-2xl border border-zinc-200/60 p-6 dark:border-zinc-800/70">
-          Projects content goes here.
-        </div>
+    <Section id="projects" title="Projects">
+      <div className="mt-10 grid grid-cols-1 gap-6 lg:grid-cols-3">
+        {PROJECTS.map((p) => (
+          <ProjectCard key={p.title} {...p} />
+        ))}
       </div>
-    </section>
-  )
+    </Section>
+  );
 }

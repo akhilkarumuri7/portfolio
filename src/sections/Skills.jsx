@@ -1,12 +1,54 @@
+import Section from "../components/Section"
+import SkillPill from "../components/SkillPill"
+import { SKILL_ICONS } from "../data/skillIcons"
+import { Terminal } from "lucide-react"
+
+const SKILL_GROUPS = [
+  {
+    title: "Programming Languages",
+    skills: ["Python", "Java", "JavaScript", "TypeScript", "C", "C++", "SQL", "R"],
+  },
+  {
+    title: "Frameworks & Web",
+    skills: ["React", "Node.js", "Flask", "Angular", "HTML", "CSS", "Tailwind"],
+  },
+  {
+    title: "Databases",
+    skills: ["PostgreSQL", "MongoDB"],
+  },
+  {
+    title: "Tools & Platforms",
+    skills: ["Git", "GitHub", "Unix/Linux", "JIRA", "Google Cloud Vision", "CLI / Bash"],
+  },
+]
+
 export default function Skills() {
   return (
-    <section id="skills" className="px-4 py-20 min-h-[85vh]">
-      <div className="mx-auto max-w-5xl">
-        <h2 className="text-3xl font-semibold tracking-tight">Skills</h2>
-        <div className="mt-6 rounded-2xl border border-zinc-200/60 p-6 dark:border-zinc-800/70">
-          Skills content goes here.
-        </div>
+    <Section id="skills" title="Skills">
+      <div className="mt-10 space-y-8 sm:space-y-10">
+        {SKILL_GROUPS.map((group) => (
+          <div key={group.title}>
+            <h3 className="text-lg sm:text-xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100">
+              {group.title}
+            </h3>
+
+            <div className="mt-3 sm:mt-4 flex flex-wrap gap-2">
+              {group.skills.map((name) => {
+                const isCli = name === "CLI / Bash"
+
+                return (
+                  <SkillPill
+                    key={name}
+                    label={name}
+                    icon={!isCli ? SKILL_ICONS[name] : undefined}
+                    Icon={isCli ? Terminal : undefined}
+                  />
+                )
+              })}
+            </div>
+          </div>
+        ))}
       </div>
-    </section>
+    </Section>
   )
 }
