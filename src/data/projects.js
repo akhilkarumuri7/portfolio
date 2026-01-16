@@ -21,7 +21,7 @@ export const PROJECTS = [
  {
     title: "TSP Optimization Suite",
     description:
-        "Implemented and compared multiple Traveling Salesman Problem solvers (greedy, local search, evolutionary, and A* w/ MST heuristic), analyzing runtime vs solution quality across different graph sizes and hyperparameters.",
+        "Developed and compared greedy, local search, evolutionary, and A* (MST heuristic) TSP solvers, analyzing runtime vs solution quality and hyperparameter effects.",
     tech: ["Python", "NumPy", "SciPy", "Matplotlib", "A* Search"],
     image: tspPreview,
     sourceUrl: "https://github.com/akhilkarumuri7/tsp-optimization",
@@ -30,7 +30,7 @@ export const PROJECTS = [
  {
     title: "Bandwagon Application",
     description:
-        "Built a Node.js + Express web app where users submit a team-switch request via a dynamic form, store submissions in MongoDB, and display live NFL team data fetched from TheSportsDB API.",
+        "Built a Node.js + Express app where users submit team-switch requests, stored in MongoDB, and displayed live NFL team data via TheSportsDB API.",
     tech: ["Node.js", "Express", "MongoDB", "JavaScript", "HTML", "CSS"],
     image: bandwagonPreview,
     websiteUrl: "https://bandwagon-application.onrender.com/Application.html",
@@ -40,7 +40,7 @@ export const PROJECTS = [
  {
     title: "Predicting NFL QB Fantasy Performance",
     description: 
-        "Built a regression pipeline to predict QB fantasy points per game (2012-2024) using volume/efficiency/experience features; compared Linear vs Lasso for interpretability and feature selection.",
+        "Built a regression pipeline (2012-2024) to predict QB fantasy PPG and compared Linear vs Lasso for interpretability and feature selection.",
     tech: ["Python", "scikit-learn", "pandas", "NumPy", "Matplotlib", "SciPy", "statsmodels", "Jupyter"],
     image: regressionPreview,
     writeupUrl: "https://devp2303.github.io/"
