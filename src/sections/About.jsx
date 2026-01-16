@@ -13,7 +13,7 @@ export default function About() {
   const iconBase = "h-5 w-5 transition-all duration-200"
 
   return (
-    <section id="about" className="px-4 py-20">
+    <section id="about" className="px-4 pt-20 pb-10">
       <div className="mx-auto max-w-5xl">
         <div className="grid gap-10 md:grid-cols-[360px_1fr] items-center">
           {/* Photo */}
@@ -35,9 +35,21 @@ export default function About() {
             </h1>
 
 
-            <p className="mt-4 text-zinc-600 dark:text-zinc-400 text-base sm:text-lg max-w-2xl">
-                I am an undergraduate student at the University of Maryland studying Computer Science on the Machine Learning track. I love solving problems, and I use programming to turn ideas into real, usable products. 
-                I'm especially interested in full-stack development and building modern web applications.
+            <p className="mt-4 text-zinc-600 dark:text-zinc-400 text-base sm:text-lg max-w-2xl leading-relaxed">
+            I am an undergraduate student at the{" "}
+            <span className="font-semibold text-zinc-900 dark:text-zinc-100">
+                University of Maryland
+            </span>{" "}
+            studying{" "}
+            <span className="font-semibold text-zinc-900 dark:text-zinc-100">
+                Computer Science on the Machine Learning track
+            </span>
+            . I love solving problems, and I use programming to turn ideas into real,
+            usable products. I'm especially interested in{" "}
+            <span className="font-semibold text-zinc-900 dark:text-zinc-100">
+                full-stack development
+            </span>{" "}
+            and building modern web applications.
             </p>
 
             <div className="mt-6 flex items-center justify-center md:justify-start gap-3">
