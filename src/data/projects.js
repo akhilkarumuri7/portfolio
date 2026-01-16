@@ -4,6 +4,7 @@ import sqlPreview from "../assets/sql_preview.png";
 import regressionPreview from "../assets/qb_pred_prev.png";
 import bandwagonPreview from "../assets/bandwagon_preview.png";
 import tspPreview from "../assets/nn_cost_vs_n.png";
+import wordlePreview from "../assets/wordle_prev.png";
 
 import { desc, source } from "framer-motion/client";
 
@@ -64,4 +65,11 @@ export const PROJECTS = [
     demoUrl: "https://www.youtube.com/watch?v=FixwEll1Nyc&feature=youtu.be",
     writeupUrl: "https://github.com/akhilkarumuri7/project4-flappybird/blob/master/FlappyBird_Project_Report.pdf",
   },
+  {
+    title: "Wordle",
+    description: "Built a Wordle clone with a Tkinter GUI and a two-pass scoring algorithm (greens then yellows) that correctly handles duplicate letters.",
+    tech: ["Python", "Tkinter"],
+    image: wordlePreview,
+    sourceUrl: "https://github.com/akhilkarumuri7/wordle",
+  }
 ];

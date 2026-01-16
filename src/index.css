@@ -4,6 +4,10 @@
 @layer base {
   html { scroll-behavior: smooth; }
   section { scroll-margin-top: 100px; }
+
+  html, body {
+    @apply bg-zinc-100 text-zinc-900 dark:bg-zinc-900 dark:text-zinc-100;
+  }
 }
 
 @layer components {
