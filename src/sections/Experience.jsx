@@ -110,7 +110,7 @@ function ExperienceItem({ item, isLast }) {
 
 export default function Experience() {
   return (
-    <Section id="experience" title="Experience" className="pt-10 pb-6" titleDelay={0.8}>
+    <Section id="experience" title="Experience" className="pt-10 pb-6" titleDelay={0.5}>
       <div className="mt-10 space-y-12">
         {EXPERIENCE.map((item, idx) => (
           <ExperienceItem
