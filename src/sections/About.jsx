@@ -1,3 +1,5 @@
+// src/sections/About.jsx
+import { motion } from "framer-motion"
 import headshot from "../assets/headshot.jpg"
 import resumePdf from "../assets/Akhil_Karumuri_resume.pdf"
 import { Github, Linkedin, Mail, FileText } from "lucide-react"
@@ -13,47 +15,65 @@ export default function About() {
   const iconBase = "h-5 w-5 transition-all duration-200"
 
   return (
-    <section id="about" className="px-4 pt-20 pb-10">
+    <section id="about" className="px-4 pt-20 pb-10 overflow-hidden">
       <div className="mx-auto max-w-5xl">
         <div className="grid gap-10 md:grid-cols-[360px_1fr] items-center">
-          {/* Photo */}
-          <div className="mx-auto md:mx-0 w-72 sm:w-80 md:w-[340px] aspect-[5/6] rounded-3xl shadow-sm overflow-hidden bg-zinc-200 dark:bg-zinc-800">
+          {/* Photo (fade in) */}
+          <motion.div
+            className="mx-auto md:mx-0 w-72 sm:w-80 md:w-[340px] aspect-[5/6] rounded-3xl shadow-sm overflow-hidden bg-zinc-200 dark:bg-zinc-800"
+            initial={{ opacity: 0, scale: 0.98 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, amount: 0.35 }}
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: 0.5 }}
+          >
             <img
               src={headshot}
               alt="Akhil headshot"
               className="h-full w-full object-cover object-top scale-110"
+              draggable="false"
             />
-          </div>
+          </motion.div>
 
-          {/* Text */}
-          <div className="text-center md:text-left">
+          {/* Text (reveal from behind image, left -> right) */}
+          <motion.div
+            className="text-center md:text-left"
+            initial={{ opacity: 0, x: -36 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.35 }}
+            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.75 }}
+          >
             <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight">
-            Hi, I'm{" "}
-            <span className="bg-gradient-to-r from-teal-700 to-emerald-700 dark:from-teal-400 dark:to-emerald-400 bg-clip-text text-transparent">
+              Hi, I'm{" "}
+              <span className="bg-gradient-to-r from-teal-700 to-emerald-700 dark:from-teal-400 dark:to-emerald-400 bg-clip-text text-transparent">
                 Akhil Karumuri
-            </span>
+              </span>
             </h1>
 
-
             <p className="mt-4 text-zinc-600 dark:text-zinc-400 text-base sm:text-lg max-w-2xl leading-relaxed">
-            I am an undergraduate student at the{" "}
-            <span className="font-semibold text-zinc-900 dark:text-zinc-100">
+              I am an undergraduate student at the{" "}
+              <span className="font-semibold text-zinc-900 dark:text-zinc-100">
                 University of Maryland
-            </span>{" "}
-            studying{" "}
-            <span className="font-semibold text-zinc-900 dark:text-zinc-100">
+              </span>{" "}
+              studying{" "}
+              <span className="font-semibold text-zinc-900 dark:text-zinc-100">
                 Computer Science on the Machine Learning track
-            </span>
-            . I love solving problems, and I use programming to turn ideas into real,
-            usable products. I'm especially interested in{" "}
-            <span className="font-semibold text-zinc-900 dark:text-zinc-100">
+              </span>
+              . I love solving problems, and I use programming to turn ideas into real,
+              usable products. I'm especially interested in{" "}
+              <span className="font-semibold text-zinc-900 dark:text-zinc-100">
                 full-stack development
-            </span>{" "}
-            and building modern web applications.
+              </span>{" "}
+              and building modern web applications.
             </p>
 
-            <div className="mt-6 flex items-center justify-center md:justify-start gap-3">
-              {/* LinkedIn (blue) */}
+            {/* Icons (slight stagger after text) */}
+            <motion.div
+              className="mt-6 flex items-center justify-center md:justify-start gap-3"
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.35 }}
+              transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
+            >
               <a
                 className={`${iconBtn} group hover:shadow-[0_0_22px_rgba(59,130,246,0.45)]`}
                 href="https://linkedin.com/in/akhil-karumuri/"
@@ -67,7 +87,6 @@ export default function About() {
                 />
               </a>
 
-              {/* GitHub (purple) */}
               <a
                 className={`${iconBtn} group hover:shadow-[0_0_22px_rgba(168,85,247,0.45)]`}
                 href="https://github.com/akhilkarumuri7"
@@ -81,7 +100,6 @@ export default function About() {
                 />
               </a>
 
-              {/* Email (red) */}
               <a
                 className={`${iconBtn} group hover:shadow-[0_0_22px_rgba(239,68,68,0.45)]`}
                 href="mailto:akhilkarumuri7@gmail.com"
@@ -93,7 +111,6 @@ export default function About() {
                 />
               </a>
 
-              {/* Resume (green) */}
               <a
                 className={`${iconBtn} group hover:shadow-[0_0_22px_rgba(34,197,94,0.45)]`}
                 href={resumePdf}
@@ -106,8 +123,8 @@ export default function About() {
                   className={`${iconBase} text-green-600 dark:text-green-400 group-hover:text-green-500 group-hover:drop-shadow-[0_0_10px_rgba(34,197,94,0.75)]`}
                 />
               </a>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
     </section>

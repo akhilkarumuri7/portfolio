@@ -1,11 +1,38 @@
+import { motion } from "framer-motion"
 import { EXPERIENCE } from "../data/experience"
 import { SKILL_ICONS } from "../data/skillIcons"
 import Section from "../components/Section"
 import SkillPill from "../components/SkillPill"
 
+const listVariants = {
+  hidden: {},
+  show: {
+    transition: {
+      // items animate one after another
+      staggerChildren: 0.12,
+      // header comes in first, then items start
+      delayChildren: 0.15, // match/align with your titleDelay (0.8)
+    },
+  },
+}
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 16 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.45, ease: [0.21, 0.61, 0.35, 1] },
+  },
+}
+
 function ExperienceItem({ item, isLast }) {
   return (
-    <div className="relative pl-10 sm:pl-12">
+    <motion.div
+      className="relative pl-10 sm:pl-12"
+      variants={itemVariants}
+      whileHover={{ y: -2 }}
+      transition={{ duration: 0.2 }}
+    >
       {/* Timeline rail (bolder) */}
       <div
         className={[
@@ -35,6 +62,7 @@ function ExperienceItem({ item, isLast }) {
               src={item.logoSrc}
               alt={`${item.company} logo`}
               className="h-full w-full object-cover"
+              draggable="false"
             />
           ) : (
             <span className="text-sm font-semibold text-zinc-900 dark:text-zinc-100">
@@ -85,14 +113,20 @@ function ExperienceItem({ item, isLast }) {
           ))}
         </div>
       ) : null}
-    </div>
+    </motion.div>
   )
 }
 
 export default function Experience() {
   return (
-    <Section id="experience" title="Experience" className="pt-10 pb-6">
-      <div className="mt-10 space-y-12">
+    <Section id="experience" title="Experience" className="pt-10 pb-6" titleDelay={0.8}>
+      <motion.div
+        className="mt-10 space-y-12"
+        variants={listVariants}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.35 }}
+      >
         {EXPERIENCE.map((item, idx) => (
           <ExperienceItem
             key={`${item.company}-${item.role}-${idx}`}
@@ -100,7 +134,7 @@ export default function Experience() {
             isLast={idx === EXPERIENCE.length - 1}
           />
         ))}
-      </div>
+      </motion.div>
     </Section>
   )
 }
