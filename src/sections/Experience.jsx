@@ -4,18 +4,6 @@ import { SKILL_ICONS } from "../data/skillIcons"
 import Section from "../components/Section"
 import SkillPill from "../components/SkillPill"
 
-const listVariants = {
-  hidden: {},
-  show: {
-    transition: {
-      // items animate one after another
-      staggerChildren: 0.12,
-      // header comes in first, then items start
-      delayChildren: 0.15, // match/align with your titleDelay (0.8)
-    },
-  },
-}
-
 const itemVariants = {
   hidden: { opacity: 0, y: 16 },
   show: {
@@ -30,6 +18,9 @@ function ExperienceItem({ item, isLast }) {
     <motion.div
       className="relative pl-10 sm:pl-12"
       variants={itemVariants}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true, amount: 0.35 }} // triggers per-item as it enters
       whileHover={{ y: -2 }}
       transition={{ duration: 0.2 }}
     >
@@ -120,13 +111,7 @@ function ExperienceItem({ item, isLast }) {
 export default function Experience() {
   return (
     <Section id="experience" title="Experience" className="pt-10 pb-6" titleDelay={0.8}>
-      <motion.div
-        className="mt-10 space-y-12"
-        variants={listVariants}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, amount: 0.35 }}
-      >
+      <div className="mt-10 space-y-12">
         {EXPERIENCE.map((item, idx) => (
           <ExperienceItem
             key={`${item.company}-${item.role}-${idx}`}
@@ -134,7 +119,7 @@ export default function Experience() {
             isLast={idx === EXPERIENCE.length - 1}
           />
         ))}
-      </motion.div>
+      </div>
     </Section>
   )
 }
