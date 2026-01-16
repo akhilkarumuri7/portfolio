@@ -25,6 +25,11 @@ import linux from "../assets/tech/linux.png"
 import cloudvision from "../assets/tech/cloudvision.png"
 import jira from "../assets/tech/jira.svg"
 
+import jupyterIcon from "../assets/tech/jupyter.png"
+import scikitIcon from "../assets/tech/scikit.png"
+import pandasIcon from "../assets/tech/pandas.png"
+import numpyIcon from "../assets/tech/numpy.png"
+
 export const SKILL_ICONS = {
   // Programming Languages
   Python: python,
@@ -57,4 +62,9 @@ export const SKILL_ICONS = {
   "Unix/Linux": linux,
   "Google Cloud Vision": cloudvision,
   JIRA: jira,
+
+  Jupyter: jupyterIcon,
+  "scikit-learn": scikitIcon,
+  pandas: pandasIcon,
+  NumPy: numpyIcon,
 }
