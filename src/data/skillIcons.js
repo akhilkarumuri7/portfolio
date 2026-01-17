@@ -63,6 +63,7 @@ export const SKILL_ICONS = {
   "Google Cloud Vision": cloudvision,
   JIRA: jira,
 
+  // Data Science
   Jupyter: jupyterIcon,
   "scikit-learn": scikitIcon,
   pandas: pandasIcon,
