@@ -30,7 +30,7 @@ export default function Projects() {
               key={p.title}
               layout
               variants={cardVariants}
-              initial={false}     // ✅ prevents existing cards from re-animating
+              initial={false}     // prevents existing cards from re-animating
               animate="show"
               exit="exit"
             >

@@ -1,8 +1,7 @@
-// src/sections/About.jsx
-import { motion } from "framer-motion"
-import headshot from "../assets/headshot.jpg"
-import resumePdf from "../assets/Akhil_Karumuri_resume.pdf"
-import { Github, Linkedin, Mail, FileText } from "lucide-react"
+import { motion } from "framer-motion";
+import headshot from "../assets/headshot.jpg";
+import resumePdf from "../assets/Akhil_Karumuri_resume.pdf";
+import { Github, Linkedin, Mail, FileText } from "lucide-react";
 
 export default function About() {
   const iconBtn =
@@ -10,9 +9,9 @@ export default function About() {
     "border border-zinc-200/60 dark:border-zinc-800/70 " +
     "bg-white/50 dark:bg-zinc-900/40 " +
     "hover:bg-white/80 dark:hover:bg-zinc-900/70 " +
-    "active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400/50"
+    "active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400/50";
 
-  const iconBase = "h-5 w-5 transition-all duration-200"
+  const iconBase = "h-5 w-5 transition-all duration-200";
 
   return (
     <section id="about" className="px-4 pt-20 pb-10 overflow-hidden">
@@ -34,13 +33,17 @@ export default function About() {
             />
           </motion.div>
 
-          {/* Text (reveal from behind image, left -> right) */}
+          {/* Text */}
           <motion.div
             className="text-center md:text-left"
             initial={{ opacity: 0, x: -36 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.35 }}
-            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.75 }}
+            transition={{
+              duration: 0.7,
+              ease: [0.22, 1, 0.36, 1],
+              delay: 0.75,
+            }}
           >
             <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight">
               Hi, I'm{" "}
@@ -58,21 +61,25 @@ export default function About() {
               <span className="font-semibold text-zinc-900 dark:text-zinc-100">
                 Computer Science on the Machine Learning track
               </span>
-              . I love solving problems, and I use programming to turn ideas into real,
-              usable products. I'm especially interested in{" "}
+              . I love solving problems, and I use programming to turn ideas
+              into real, usable products. I'm especially interested in{" "}
               <span className="font-semibold text-zinc-900 dark:text-zinc-100">
                 full-stack development
               </span>{" "}
               and building modern web applications.
             </p>
 
-            {/* Icons (slight stagger after text) */}
+            {/* Icons */}
             <motion.div
               className="mt-6 flex items-center justify-center md:justify-start gap-3"
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.35 }}
-              transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
+              transition={{
+                duration: 0.5,
+                ease: [0.22, 1, 0.36, 1],
+                delay: 0.15,
+              }}
             >
               <a
                 className={`${iconBtn} group hover:shadow-[0_0_22px_rgba(59,130,246,0.45)]`}
@@ -128,5 +135,5 @@ export default function About() {
         </div>
       </div>
     </section>
-  )
+  );
 }

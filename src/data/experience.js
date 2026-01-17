@@ -13,7 +13,7 @@ export const EXPERIENCE = [
     bullets: [
       "Developed a C++ scripting tool to automate playback workflows across a geospatial visualization platform.",
       "Implemented 10 core commands (view re-centering, object selection, zooming, playback control, etc.), with extensibility for future functionality.",
-      "Leveraged the platform’s messaging architecture to reduce manual operator steps and improve usability.",
+      "Leveraged the platform's messaging architecture to reduce manual operator steps and improve usability.",
       "Gained Agile experience by participating in Scrum ceremonies and managing tasks through JIRA, learning the full software development lifecycle.",
     ],
     tech: ["C++", "React", "TypeScript"],

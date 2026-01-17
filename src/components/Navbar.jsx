@@ -134,7 +134,6 @@ export default function Navbar() {
 
   const compact = isMobile || isScrolled
 
-  // Stronger “glass” blur
   const pillBase =
     "mx-auto w-full border backdrop-blur-xl backdrop-saturate-150 " +
     "bg-white/35 dark:bg-zinc-950/25 " +
