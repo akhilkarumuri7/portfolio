@@ -1,5 +1,5 @@
-import resumePdf from "../assets/Akhil_Karumuri_resume.pdf"
-import { Github, Linkedin, Mail, FileText } from "lucide-react"
+import resumePdf from "../assets/Akhil_Karumuri_resume.pdf";
+import { Github, Linkedin, Mail, FileText } from "lucide-react";
 
 export default function Footer() {
   const iconBtn =
@@ -7,12 +7,14 @@ export default function Footer() {
     "border border-zinc-200/60 dark:border-zinc-800/70 " +
     "bg-white/50 dark:bg-zinc-900/40 " +
     "hover:bg-white/80 dark:hover:bg-zinc-900/70 " +
-    "active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400/50"
+    "active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400/50";
 
-  const iconBase = "h-[18px] w-[18px] transition-all duration-200"
+  const iconBase = "h-[18px] w-[18px] transition-all duration-200";
 
-  const emailSubject = encodeURIComponent("Portfolio Contact")
-  const emailBody = encodeURIComponent(`Hi Akhil,\n\nI wanted to reach out about...\n\nBest,\n`)
+  const emailSubject = encodeURIComponent("Portfolio Contact");
+  const emailBody = encodeURIComponent(
+    `Hi Akhil,\n\nI wanted to reach out about...\n\nBest,\n`
+  );
 
   return (
     <footer className="mt-16 border-t border-black/10 dark:border-white/10">
@@ -81,5 +83,5 @@ export default function Footer() {
         </div>
       </div>
     </footer>
-  )
+  );
 }
