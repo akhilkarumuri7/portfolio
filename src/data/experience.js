@@ -10,7 +10,7 @@ export const EXPERIENCE = [
     location: "Herndon, VA • On-site",
     start: "Jun 2026",
     end: "Aug 2026",
-    logo: amazonLogo
+    logoSrc: amazonLogo,
   },
   {
     role: "Software Engineering Intern",
