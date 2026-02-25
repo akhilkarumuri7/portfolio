@@ -5,7 +5,7 @@ import amazonLogo from "../assets/amazon.jpeg"
 
 export const EXPERIENCE = [
   {
-    role: "Software Developer Engineer Intern",
+    role: "Software Development Engineer Intern",
     company: "Amazon",
     location: "Herndon, VA • On-site",
     start: "Jun 2026",
