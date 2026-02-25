@@ -1,7 +1,7 @@
 import hiiLogo from "../assets/hii.jpg"
 import softramsLogo from "../assets/softrams.png"
 import aplLogo from "../assets/apl.jpeg"
-import amazonLogo from "../assests/amazon.jpeg"
+import amazonLogo from "../assets/amazon.jpeg"
 
 export const EXPERIENCE = [
   {
